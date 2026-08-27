@@ -47,4 +47,5 @@ O site possui menu mobile com abertura e fechamento, navegação por âncoras, b
 
 ## Execução
 
+## Site desenvolvido como atividade prática no curso de web design python
 No ambiente do projeto, a aplicação é servida pelo Vite. Para uma execução local equivalente, instale as dependências do template e use o script de desenvolvimento configurado no `package.json`. A entrega visual e funcional está concentrada em `client/index.html`, `client/src/main.js` e `client/src/styles.css`.
