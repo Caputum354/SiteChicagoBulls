@@ -1,0 +1,2392 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;600;800&display=swap");
+
+/* A fonte "Sekuya" não existe no Google Fonts (o @import antigo dava 404).
+   Se você tiver o arquivo dela, descomente o bloco abaixo e coloque em img/fonts/. */
+/*
+@font-face {
+  font-family: "Sekuya";
+  src: url("fonts/Sekuya.woff2") format("woff2");
+  font-display: swap;
+}
+*/
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+  --vermelho: #ce1141;
+  --vermelho-claro: #d5003d;
+  --vermelho-escuro: #9f0d32;
+
+  --preto: #080808;
+  --preto-2: #111111;
+  --linha: #262626;
+
+  --branco: #ffffff;
+  --creme: #f8f8f5;
+  --cinza-texto: #cfcfcf;
+  --cinza-fraco: #8a929c;
+
+  --fonte-titulo: "Sekuya", "Bebas Neue", Impact, sans-serif;
+  --fonte-display: "Bebas Neue", Impact, sans-serif;
+  --fonte-ui: Manrope, "Segoe UI", sans-serif;
+  --fonte-texto: Arial, Helvetica, sans-serif;
+
+  --altura-menu: 8.5rem;
+}
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+.sprite {
+  display: none;
+}
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+  background-color: var(--preto);
+  overflow-x: hidden;
+}
+
+section[id],
+aside[id] {
+  scroll-margin-top: calc(var(--altura-menu) + 1rem);
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.menu {
+  width: 100%;
+  height: var(--altura-menu);
+
+  /* três colunas: marca | menu | vazio.
+     Como as laterais são 1fr iguais, o <ul> fica
+     centralizado no meio do header, e não entre a
+     logo e a borda direita. */
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+
+  padding: 0 3rem;
+
+  background: var(--preto);
+  border-bottom: 0.6rem solid var(--vermelho);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  text-decoration: none;
+}
+
+.marca img {
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: contain;
+}
+
+.menu h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  line-height: 1.15;
+  letter-spacing: 0.05rem;
+
+  color: var(--branco);
+}
+
+#destaque {
+  color: var(--vermelho);
+}
+
+/* ========================================
+   MENU
+======================================== */
+
+.menu ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  justify-self: center;
+
+  gap: 0.4rem;
+
+  list-style-type: none;
+}
+
+.menu ul a {
+  display: block;
+
+  padding: 0.7rem 1.1rem;
+
+  border-radius: 0.3rem;
+
+  font-family: var(--fonte-ui);
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03rem;
+  text-decoration: none;
+
+  color: var(--branco);
+
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+}
+
+.menu ul a:hover,
+.menu ul a:focus-visible {
+  color: var(--vermelho);
+  background-color: rgba(206, 17, 65, 0.12);
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  padding: calc(var(--altura-menu) + 4rem) 3rem 5rem;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  inset: 0;
+
+  object-fit: cover;
+  object-position: center;
+
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+
+  z-index: 1;
+}
+
+/* ========================================
+   HERO CONTENT
+======================================== */
+
+.hero-content {
+  width: min(48rem, 52%);
+
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+
+  padding: 2.5rem 2rem;
+
+  background-color: rgba(0, 0, 0, 0.65);
+  border-radius: 15px;
+
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+}
+
+.hero-content h2 {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+#destaque2 {
+  display: block;
+
+  font-family: var(--fonte-titulo);
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  line-height: 1;
+
+  color: var(--vermelho);
+}
+
+#texto {
+  display: block;
+
+  max-width: 40rem;
+  margin: 1.5rem 0 2rem;
+
+  font-family: var(--fonte-display);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: 0.02rem;
+
+  color: #ececec;
+}
+
+/* ========================================
+   BOTÃO PRINCIPAL
+======================================== */
+
+.BotaoPrincipal {
+  width: 15.5rem;
+  height: 3.5rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 30px;
+
+  background-color: var(--vermelho);
+  color: var(--branco);
+
+  font-family: var(--fonte-ui);
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  animation: aumentaTamanho 3s ease-in-out infinite;
+}
+
+.BotaoPrincipal:hover,
+.BotaoPrincipal:focus-visible {
+  background-color: var(--vermelho-escuro);
+  animation-play-state: paused;
+}
+
+@keyframes aumentaTamanho {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* ========================================
+   CARD PRÓXIMO JOGO
+======================================== */
+
+.game-card {
+  width: min(34rem, 38vw);
+  min-height: 20rem;
+
+  padding: 2rem 2.75rem;
+
+  position: relative;
+  z-index: 2;
+
+  align-self: center;
+
+  background-color: var(--creme);
+  color: var(--preto);
+
+  font-family: var(--fonte-texto);
+
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.45);
+}
+
+/* ========================================
+   GAME HEADER
+======================================== */
+
+.game-header {
+  display: flex;
+  align-items: center;
+
+  gap: 0.75rem;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  letter-spacing: 0.15rem;
+
+  color: #b00020;
+}
+
+.status-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+
+  display: inline-block;
+
+  background-color: var(--vermelho-claro);
+
+  border-radius: 50%;
+}
+
+/* ========================================
+   DATA
+======================================== */
+
+.game-date {
+  display: flex;
+  align-items: center;
+
+  margin-top: 0.5rem;
+}
+
+.day {
+  font-size: 6.5rem;
+  line-height: 1;
+
+  font-weight: 700;
+
+  letter-spacing: -0.35rem;
+}
+
+.month-year {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+
+  font-size: 0.8rem;
+  line-height: 1.5;
+
+  color: #6f7d8c;
+}
+
+.month-year strong {
+  font-size: 0.9rem;
+  color: #6f7d8c;
+}
+
+/* ========================================
+   DIVISOR
+======================================== */
+
+.divider {
+  height: 0.08rem;
+
+  margin: 1.5rem 0 2.5rem;
+
+  background-color: #d9d9d4;
+}
+
+/* ========================================
+   TIMES
+======================================== */
+
+.teams {
+  display: grid;
+
+  grid-template-columns: 1fr 3rem 1fr;
+
+  align-items: center;
+}
+
+.team {
+  display: flex;
+  flex-direction: column;
+}
+
+.team strong {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+  font-size: 2.8rem;
+
+  font-weight: 900;
+
+  letter-spacing: -0.1rem;
+}
+
+.team span {
+  margin-top: 1.5rem;
+
+  font-size: 0.8rem;
+
+  color: #718096;
+}
+
+.opponent {
+  text-align: right;
+}
+
+.versus {
+  text-align: center;
+
+  color: var(--vermelho-claro);
+
+  font-size: 1.4rem;
+
+  font-weight: bold;
+}
+
+/* ========================================
+   ESTATÍSTICAS
+======================================== */
+
+.bulls-stats {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 2.5rem 3rem;
+
+  background-color: var(--vermelho-claro);
+
+  color: var(--branco);
+
+  font-family: var(--fonte-display);
+
+  font-weight: 200;
+}
+
+/* ========================================
+   INTRODUÇÃO
+======================================== */
+
+.stats-intro {
+  width: 35%;
+  min-width: 18rem;
+
+  padding-right: 3rem;
+}
+
+.stats-label {
+  display: block;
+
+  margin-bottom: 0.75rem;
+
+  font-family: var(--fonte-ui);
+  font-size: 0.75rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12rem;
+}
+
+.stats-intro h2 {
+  margin: 0;
+
+  font-size: 1.5rem;
+
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  letter-spacing: -0.03rem;
+}
+
+/* ========================================
+   ESTATÍSTICAS INDIVIDUAIS
+======================================== */
+
+.stat {
+  min-height: 5.5rem;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 2.5rem;
+
+  border-left: 0.0625rem solid rgba(255, 255, 255, 0.45);
+}
+
+.stat strong {
+  margin-right: 1rem;
+
+  font-size: 3.5rem;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.12rem;
+}
+
+.stat div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.1rem;
+}
+
+.stat span {
+  font-size: 0.65rem;
+
+  line-height: 1.1;
+
+  font-weight: 900;
+
+  letter-spacing: 0.05rem;
+}
+
+/* ========================================
+   SEÇÃO ELENCO
+======================================== */
+
+.elenco {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 3rem;
+
+  padding: 5rem 3rem;
+
+  background-color: var(--preto);
+
+  color: var(--branco);
+
+  font-family: var(--fonte-display);
+}
+
+/* ========================================
+   INFORMAÇÕES DO ELENCO
+======================================== */
+
+.elenco-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ========================================
+   TÍTULO
+======================================== */
+
+.elenco-label {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color: var(--vermelho);
+
+  font-size: 1.3rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2rem;
+}
+
+.elenco-info h2 {
+  margin: 0 0 2rem;
+
+  font-family: var(--fonte-titulo);
+
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+
+  line-height: 1.05;
+
+  color: var(--branco);
+}
+
+/* ========================================
+   TEXTOS
+======================================== */
+
+.elenco-info > p {
+  max-width: 65ch;
+
+  margin-bottom: 1.5rem;
+
+  font-family: var(--fonte-texto);
+
+  font-size: 1.1rem;
+
+  line-height: 1.7;
+
+  color: var(--cinza-texto);
+}
+
+/* ========================================
+   VÍDEO
+======================================== */
+
+.elenco-video {
+  width: 100%;
+  height: 24rem;
+
+  margin: 1rem 0 2rem;
+
+  overflow: hidden;
+
+  border-left: 0.35rem solid var(--vermelho);
+
+  border-radius: 8px;
+
+  background-color: var(--preto-2);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.elenco-video video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  opacity: 0.85;
+}
+
+/* ========================================
+   CURIOSIDADE
+======================================== */
+
+.curiosidade {
+  width: 100%;
+
+  padding: 1.5rem;
+
+  border-left: 0.3rem solid var(--vermelho);
+
+  background-color: var(--preto-2);
+}
+
+.curiosidade span {
+  display: block;
+
+  margin-bottom: 0.8rem;
+
+  color: var(--vermelho);
+
+  font-family: var(--fonte-display);
+
+  font-size: 1.3rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15rem;
+}
+
+.curiosidade p {
+  margin: 0;
+
+  font-family: var(--fonte-texto);
+
+  font-size: 1.05rem;
+
+  line-height: 1.6;
+
+  color: #d6d6d6;
+}
+
+/* ========================================
+   QUADRA
+======================================== */
+
+.quadra {
+  width: 100%;
+  height: 44rem;
+
+  align-self: start;
+
+  position: sticky;
+  top: calc(var(--altura-menu) + 2rem);
+
+  border-radius: 1rem;
+
+  overflow: hidden;
+}
+
+.quadra-img {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+
+  inset: 0;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  z-index: 0;
+}
+
+.quadra::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.12);
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   JOGADORES
+======================================== */
+
+.jogador {
+  width: 10rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  position: absolute;
+
+  z-index: 2;
+
+  transition: transform 0.3s ease;
+}
+
+.jogador img {
+  width: 8rem;
+  height: 11rem;
+
+  display: block;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 0 0.7rem rgba(0, 0, 0, 0.8));
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+/* ========================================
+   CARD DOS JOGADORES
+======================================== */
+
+.jogador-card {
+  min-width: 7rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  padding: 0.55rem 0.8rem;
+
+  margin-bottom: -0.3rem;
+
+  background-color: rgba(8, 8, 8, 0.92);
+
+  border-left: 0.25rem solid var(--vermelho);
+
+  border-radius: 0.2rem;
+
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.45);
+}
+
+.jogador-card strong {
+  font-family: var(--fonte-display);
+
+  font-size: 1.15rem;
+
+  letter-spacing: 0.05rem;
+
+  color: var(--branco);
+}
+
+.posicao {
+  color: var(--vermelho);
+
+  font-family: var(--fonte-texto);
+
+  font-size: 0.7rem;
+
+  font-weight: 900;
+}
+
+/* ========================================
+   HOVER DOS JOGADORES
+======================================== */
+
+.jogador:hover {
+  transform: translateY(-0.5rem);
+
+  z-index: 5;
+}
+
+.jogador:hover img {
+  transform: scale(1.08);
+
+  filter: drop-shadow(0 0 1rem rgba(206, 17, 65, 0.7));
+}
+
+/* ========================================
+   FORMAÇÃO
+======================================== */
+
+.jogador-pg {
+  left: 15%;
+  top: 40%;
+}
+
+.jogador-sg {
+  left: 15%;
+  top: 8%;
+}
+
+.jogador-sf {
+  left: 65%;
+  top: 8%;
+}
+
+.jogador-pf {
+  left: 65%;
+  top: 40%;
+}
+
+.jogador-c {
+  left: 41%;
+  top: 66%;
+}
+
+/* ========================================
+   LENDÁRIOS — CARROSSEL AUTOMÁTICO
+
+   O trilho tem duas cópias da mesma lista. A animação
+   desloca metade dele e recomeça, então o corte não
+   aparece e a rolagem parece infinita.
+======================================== */
+
+.lendarios {
+  padding: 5rem 3rem;
+
+  background-color: var(--preto-2);
+
+  color: var(--branco);
+
+  border-top: 0.0625rem solid #1c1c1c;
+}
+
+.lendarios-topo {
+  max-width: 60ch;
+
+  margin-bottom: 2.5rem;
+}
+
+.lendarios-label {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color: var(--vermelho);
+
+  font-family: var(--fonte-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.2rem;
+}
+
+.lendarios-topo h2 {
+  margin-bottom: 1rem;
+
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.lendarios-topo p {
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  color: var(--cinza-texto);
+}
+
+/* ---- trilho ---- */
+
+.carrossel {
+  /* overflow hidden = nunca existe barra de rolagem.
+     O deslocamento é feito por transform, no trilho. */
+  overflow: hidden;
+
+  cursor: grab;
+
+  /* arrastar não pode selecionar texto nem "pegar" a foto */
+  user-select: none;
+  -webkit-user-select: none;
+
+  touch-action: pan-y;
+
+  /* pontas dissolvendo no fundo, em vez de corte seco */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000000 5%,
+    #000000 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000000 5%,
+    #000000 95%,
+    transparent
+  );
+}
+
+.carrossel-trilho {
+  width: max-content;
+
+  display: flex;
+
+  /* o espaçamento é margem de cada card, não gap: assim uma
+     cópia da lista mede exatamente metade do trilho e o loop
+     fecha sem emenda */
+  animation: rolarCarrossel 80s linear infinite;
+
+  will-change: transform;
+}
+
+/* sentido padrão: os cards atravessam para a direita.
+   Sai de uma cópia inteira à esquerda e chega ao zero — quando
+   reinicia, a segunda cópia está onde a primeira estava. */
+@keyframes rolarCarrossel {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* mouse em cima de um card (classe posta pelo script) */
+.carrossel-trilho.pausado {
+  animation-play-state: paused;
+}
+
+/* enquanto o script controla o trilho, a animação sai de cena */
+.carrossel-trilho.manual {
+  animation: none;
+}
+
+.carrossel.arrastando {
+  cursor: grabbing;
+}
+
+.carrossel img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+/* ---- card ---- */
+
+.lendario {
+  width: 13rem;
+
+  flex-shrink: 0;
+
+  margin-right: 1.5rem;
+
+  overflow: hidden;
+
+  background-color: var(--preto);
+
+  border-radius: 0.3rem;
+  border-bottom: 0.25rem solid var(--vermelho);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.lendario img {
+  width: 100%;
+  height: 16rem;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center top;
+
+  transition: transform 0.4s ease;
+}
+
+/* ---- hover do card (a correia para junto, pelo script) ---- */
+
+.lendario:hover {
+  transform: translateY(-0.6rem);
+
+  border-bottom-color: var(--branco);
+
+  box-shadow: 0 0.8rem 1.8rem rgba(0, 0, 0, 0.55);
+}
+
+.lendario:hover img {
+  transform: scale(1.07);
+}
+
+.lendario:hover strong {
+  color: var(--vermelho);
+}
+
+.lendario figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  padding: 0.9rem 1rem 1rem;
+}
+
+.lendario-pos {
+  font-family: var(--fonte-ui);
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+
+  color: var(--vermelho);
+}
+
+.lendario strong {
+  font-family: var(--fonte-display);
+  font-size: 1.3rem;
+  line-height: 1.1;
+  letter-spacing: 0.03rem;
+
+  color: var(--branco);
+}
+
+.lendario-anos {
+  font-family: var(--fonte-texto);
+  font-size: 0.75rem;
+
+  color: var(--cinza-fraco);
+}
+
+/* ========================================
+   SÓCIO TORCEDOR
+======================================== */
+
+.socio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 4rem;
+
+  padding: 6rem 3rem;
+
+  background:
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(206, 17, 65, 0.18),
+      transparent 55%
+    ),
+    var(--preto);
+
+  border-top: 0.35rem solid var(--vermelho);
+
+  color: var(--branco);
+}
+
+.socio-label {
+  display: block;
+
+  margin-bottom: 1rem;
+
+  color: var(--vermelho);
+
+  font-family: var(--fonte-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
+
+.socio h2 {
+  margin-bottom: 1.5rem;
+
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  line-height: 1.05;
+}
+
+.socio-texto {
+  max-width: 50ch;
+
+  margin-bottom: 1.5rem;
+
+  font-family: var(--fonte-texto);
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  color: var(--cinza-texto);
+}
+
+/* ========================================
+   BENEFÍCIOS
+======================================== */
+
+.socio-beneficios {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  list-style: none;
+}
+
+.socio-beneficios li {
+  position: relative;
+
+  padding-left: 1.6rem;
+
+  font-family: var(--fonte-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.04rem;
+
+  color: #e6e6e6;
+}
+
+.socio-beneficios li::before {
+  content: "";
+
+  width: 0.55rem;
+  height: 0.55rem;
+
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+
+  background-color: var(--vermelho);
+
+  transform: rotate(45deg);
+}
+
+/* ========================================
+   FORMULÁRIO
+======================================== */
+
+.socio-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+
+  margin-top: 2.5rem;
+  padding: 2rem;
+
+  background-color: var(--preto-2);
+
+  border-left: 0.3rem solid var(--vermelho);
+  border-radius: 0.4rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.socio-form label {
+  font-family: var(--fonte-ui);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+
+  color: var(--cinza-fraco);
+}
+
+.socio-form input,
+.socio-form select {
+  width: 100%;
+
+  padding: 0.85rem 1rem;
+
+  background-color: var(--preto);
+
+  border: 0.0625rem solid var(--linha);
+  border-radius: 0.3rem;
+
+  color: var(--branco);
+
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+}
+
+.socio-form input::placeholder {
+  color: #5c5c5c;
+}
+
+.socio-form input:focus,
+.socio-form select:focus {
+  outline: none;
+
+  border-color: var(--vermelho);
+  box-shadow: 0 0 0 0.2rem rgba(206, 17, 65, 0.25);
+}
+
+.campo-check {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.campo-check input {
+  width: 1.1rem;
+  height: 1.1rem;
+
+  accent-color: var(--vermelho);
+}
+
+.campo-check label {
+  text-transform: none;
+  letter-spacing: 0.02rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-form {
+  height: 3.4rem;
+
+  border: none;
+  border-radius: 0.3rem;
+
+  background-color: var(--vermelho);
+  color: var(--branco);
+
+  font-family: var(--fonte-ui);
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+
+.btn-form:hover,
+.btn-form:focus-visible {
+  background-color: var(--vermelho-escuro);
+}
+
+.form-aviso {
+  min-height: 1.2rem;
+
+  font-family: var(--fonte-texto);
+  font-size: 0.85rem;
+
+  color: var(--cinza-fraco);
+}
+
+.form-aviso.ok {
+  color: #6fd08c;
+}
+
+.form-aviso.erro {
+  color: #ff6b81;
+}
+
+/* ========================================
+   CARTEIRINHA
+======================================== */
+
+.carteirinha-area {
+  position: sticky;
+  top: calc(var(--altura-menu) + 2rem);
+
+  align-self: start;
+}
+
+.carteirinha {
+  width: 100%;
+  max-width: 34rem;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: linear-gradient(155deg, #171717 0%, #0a0a0a 60%);
+
+  border: 0.0625rem solid var(--linha);
+  border-radius: 1rem;
+
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.65);
+}
+
+.carteirinha::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at 78% 78%,
+    rgba(206, 17, 65, 0.22),
+    transparent 45%
+  );
+
+  pointer-events: none;
+}
+
+/* ---- topo da carteirinha ---- */
+
+.carteirinha-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 1rem 1.5rem;
+
+  background-color: var(--vermelho);
+}
+
+.carteirinha-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.carteirinha-marca img {
+  width: 3rem;
+  height: 3rem;
+
+  object-fit: contain;
+}
+
+.carteirinha-marca strong {
+  display: block;
+
+  font-family: var(--fonte-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.12rem;
+
+  color: var(--branco);
+}
+
+.carteirinha-marca span {
+  font-family: var(--fonte-ui);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.16rem;
+
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.carteirinha-plano {
+  padding: 0.35rem 0.7rem;
+
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 0.2rem;
+
+  font-family: var(--fonte-ui);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16rem;
+
+  color: var(--branco);
+}
+
+/* ---- corpo da carteirinha ---- */
+
+.carteirinha-corpo {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+
+  padding: 1.5rem;
+}
+
+.carteirinha-foto {
+  width: 100%;
+  height: 11rem;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center 25%;
+
+  background-color: #161616;
+
+  border: 0.12rem solid #333333;
+  border-radius: 0.2rem;
+
+  /* leve tom de documento, como foto impressa */
+  filter: contrast(1.05) saturate(0.95);
+}
+
+.carteirinha-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.carteirinha-dados dt {
+  margin-bottom: 0.15rem;
+
+  font-family: var(--fonte-ui);
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14rem;
+
+  color: var(--cinza-fraco);
+}
+
+.carteirinha-dados dd {
+  font-family: var(--fonte-display);
+  font-size: 1.35rem;
+  line-height: 1.1;
+  letter-spacing: 0.04rem;
+
+  color: var(--branco);
+
+  overflow-wrap: anywhere;
+}
+
+.linha-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* ---- assinatura e código ---- */
+
+.carteirinha-assinatura {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  padding: 0 1.5rem 1rem;
+}
+
+.carteirinha-assinatura span {
+  flex: 1;
+
+  padding-top: 0.4rem;
+
+  border-top: 0.0625rem solid #3a3a3a;
+
+  font-family: var(--fonte-ui);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.14rem;
+
+  color: #5c5c5c;
+}
+
+.barras {
+  width: 8rem;
+  height: 2.2rem;
+
+  background-image: repeating-linear-gradient(
+    90deg,
+    #d8d8d8 0 0.12rem,
+    transparent 0.12rem 0.2rem,
+    #d8d8d8 0.2rem 0.32rem,
+    transparent 0.32rem 0.5rem
+  );
+}
+
+.carteirinha-mrz {
+  padding: 0.8rem 1.5rem;
+
+  background-color: #060606;
+  border-top: 0.0625rem dashed #2f2f2f;
+
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12rem;
+
+  color: #6b6b6b;
+
+  overflow-wrap: anywhere;
+}
+
+.carteirinha-nota {
+  margin-top: 1rem;
+
+  font-family: var(--fonte-texto);
+  font-size: 0.8rem;
+
+  color: #6f6f6f;
+}
+
+/* ========================================
+   LOJA
+======================================== */
+
+.loja {
+  padding: 6rem 3rem;
+
+  background-color: var(--creme);
+
+  color: var(--preto);
+}
+
+.loja-topo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+
+  padding-bottom: 2rem;
+
+  border-bottom: 0.2rem solid rgba(8, 8, 8, 0.12);
+}
+
+.loja-label {
+  display: block;
+
+  margin-bottom: 0.6rem;
+
+  color: var(--vermelho);
+
+  font-family: var(--fonte-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+.loja-topo h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1;
+}
+
+.loja-topo > p {
+  max-width: 34ch;
+
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  color: #5b6673;
+}
+
+.loja-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 2rem;
+
+  margin-top: 3rem;
+}
+
+/* ---- card de produto ---- */
+
+.produto {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background-color: var(--branco);
+  border-radius: 0.4rem;
+
+  box-shadow: 0 0.5rem 1.5rem rgba(8, 8, 8, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.produto:hover {
+  transform: translateY(-0.5rem);
+
+  box-shadow: 0 1rem 2rem rgba(8, 8, 8, 0.2);
+}
+
+.produto-img {
+  height: 16rem;
+
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  /* fundo claro para as fotos com fundo transparente aparecerem,
+     inclusive as peças pretas */
+  background:
+    radial-gradient(circle at 50% 35%, #ffffff, transparent 65%),
+    linear-gradient(150deg, #f1efeb, #dcd8d2);
+}
+
+.produto-foto {
+  width: 100%;
+  height: 100%;
+
+  padding: 1.5rem;
+
+  object-fit: contain;
+
+  filter: drop-shadow(0 0.6rem 0.9rem rgba(8, 8, 8, 0.28));
+
+  transition: transform 0.3s ease;
+}
+
+.produto:hover .produto-foto {
+  transform: scale(1.06);
+}
+
+.tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  padding: 0.3rem 0.6rem;
+
+  background-color: var(--vermelho);
+  border-radius: 0.2rem;
+
+  font-family: var(--fonte-ui);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12rem;
+
+  color: var(--branco);
+}
+
+.produto-info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.produto-cat {
+  font-family: var(--fonte-ui);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.16rem;
+
+  color: #8a94a0;
+}
+
+.produto h3 {
+  font-family: var(--fonte-display);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.02rem;
+}
+
+.produto-info > p {
+  font-family: var(--fonte-texto);
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  color: #5b6673;
+}
+
+.preco {
+  margin-top: auto;
+  padding-top: 0.8rem;
+
+  font-family: var(--fonte-ui);
+  font-size: 1.3rem;
+  font-weight: 800;
+
+  color: var(--vermelho);
+}
+
+.btn-produto {
+  height: 2.9rem;
+
+  background-color: transparent;
+
+  border: 0.125rem solid var(--preto);
+  border-radius: 0.3rem;
+
+  color: var(--preto);
+
+  font-family: var(--fonte-ui);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+}
+
+.btn-produto:hover,
+.btn-produto:focus-visible {
+  background-color: var(--vermelho);
+  border-color: var(--vermelho);
+
+  color: var(--branco);
+}
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+  padding: 4rem 3rem 2rem;
+
+  background-color: #050505;
+
+  border-top: 0.4rem solid var(--vermelho);
+
+  color: #9aa0a6;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+  gap: 3rem;
+
+  padding-bottom: 3rem;
+}
+
+.footer-marca img {
+  width: 5rem;
+  height: 5rem;
+
+  margin-bottom: 1rem;
+
+  object-fit: contain;
+}
+
+.footer-marca p {
+  max-width: 34ch;
+
+  font-family: var(--fonte-texto);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-redes {
+  display: flex;
+  gap: 0.8rem;
+
+  margin-top: 1.5rem;
+}
+
+.footer-redes a {
+  width: 2.6rem;
+  height: 2.6rem;
+
+  display: grid;
+  place-items: center;
+
+  background-color: var(--preto-2);
+  border-radius: 50%;
+
+  transition: background-color 0.3s;
+}
+
+.footer-redes svg {
+  width: 1.2rem;
+  height: 1.2rem;
+
+  fill: #cfcfcf;
+  stroke: #cfcfcf;
+}
+
+.footer-redes a:hover,
+.footer-redes a:focus-visible {
+  background-color: var(--vermelho);
+}
+
+.footer-col h3 {
+  margin-bottom: 1.2rem;
+
+  font-family: var(--fonte-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.15rem;
+
+  color: var(--branco);
+}
+
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+
+  list-style: none;
+}
+
+.footer-col a {
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  text-decoration: none;
+
+  color: #9aa0a6;
+
+  transition: color 0.3s;
+}
+
+.footer-col a:hover,
+.footer-col a:focus-visible {
+  color: var(--vermelho);
+}
+
+.footer-contato p {
+  margin-bottom: 0.8rem;
+
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  padding-top: 1.5rem;
+
+  border-top: 0.0625rem solid #1c1c1c;
+
+  font-family: var(--fonte-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.06rem;
+
+  color: #6b6b6b;
+}
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 0.15rem solid var(--vermelho);
+  outline-offset: 0.2rem;
+}
+
+/* Se o sistema estiver com "reduzir movimento" ligado, só o efeito
+   de pulsar do botão é desligado. Antes esta regra derrubava TODAS
+   as animações do site, inclusive a borda do hero. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .BotaoPrincipal {
+    animation: none;
+  }
+}
+
+/* ========================================
+   RESPONSIVO
+======================================== */
+
+@media (max-width: 1200px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content,
+  .game-card {
+    width: 100%;
+    max-width: 46rem;
+  }
+
+  .game-card {
+    align-self: flex-end;
+  }
+
+  .socio {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .carteirinha-area {
+    position: static;
+  }
+
+  .carteirinha {
+    max-width: 38rem;
+  }
+}
+
+/* Entre 1200px e 901px a quadra continua exatamente onde estava:
+   mesma coluna, mesma altura, mesmo sticky. Só os jogadores
+   encolhem para não serem cortados pela coluna mais estreita. */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .jogador {
+    width: 8rem;
+  }
+
+  .jogador img {
+    width: 6.5rem;
+    height: 9rem;
+  }
+
+  .jogador-card {
+    min-width: 5.5rem;
+
+    padding: 0.4rem 0.6rem;
+  }
+
+  .jogador-card strong {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  /* no celular o header fixo comeria quase metade da tela,
+     então ele passa a rolar junto com a página */
+  header {
+    position: static;
+  }
+
+  section[id],
+  aside[id] {
+    scroll-margin-top: 1rem;
+  }
+
+  .menu {
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+
+    padding: 1.25rem 1rem;
+  }
+
+  .marca {
+    justify-content: center;
+  }
+
+  /* a quadra depende de posicionamento absoluto em porcentagem
+     e não cabe bem em tela estreita: ela e os cards dos
+     jogadores saem do ar no mobile */
+  .quadra,
+  .jogador {
+    display: none;
+  }
+
+  .elenco {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lendarios {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .lendario {
+    width: 10.5rem;
+  }
+
+  .lendario img {
+    height: 13rem;
+  }
+
+  .lendario strong {
+    font-size: 1.1rem;
+  }
+
+  .marca img {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .menu ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu ul a {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .bulls-stats {
+    gap: 1.5rem;
+
+    padding: 3rem 1.5rem;
+  }
+
+  .stats-intro {
+    width: 100%;
+
+    padding-right: 0;
+  }
+
+  .stat {
+    padding: 0 1.5rem;
+  }
+
+  .elenco,
+  .socio,
+  .loja,
+  footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .socio-form,
+  .linha-dupla {
+    grid-template-columns: 1fr;
+  }
+
+  .carteirinha-corpo {
+    grid-template-columns: 1fr;
+  }
+
+  .carteirinha-foto {
+    width: 100%;
+    max-width: 11rem;
+    height: 13rem;
+  }
+
+  .game-card {
+    padding: 1.5rem;
+  }
+
+  .day {
+    font-size: 4.5rem;
+    letter-spacing: -0.2rem;
+  }
+
+  .team strong {
+    font-size: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   BORDA ANIMADA DO HERO
+
+   Cada barra é um <span> próprio no index.html:
+   .borda-topo, .borda-direita, .borda-base e
+   .borda-esquerda. Dá para mexer em cor, espessura,
+   duração e delay de cada uma separadamente.
+======================================== */
+
+.borda {
+  position: absolute;
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+/* ---- topo: corre para a direita ---- */
+
+.borda-topo {
+  width: 100%;
+  height: 0.5rem;
+
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(to right, transparent, var(--vermelho));
+
+  animation: bordaTopo 2s linear infinite;
+}
+
+@keyframes bordaTopo {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* ---- direita: corre para baixo ---- */
+
+.borda-direita {
+  width: 0.5rem;
+  height: 100%;
+
+  top: 0;
+  right: 0;
+
+  background: linear-gradient(to bottom, transparent, var(--vermelho));
+
+  animation: bordaDireita 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes bordaDireita {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* ---- base: corre para a esquerda ---- */
+
+.borda-base {
+  width: 100%;
+  height: 0.5rem;
+
+  bottom: 0;
+  left: 0;
+
+  background: linear-gradient(to left, transparent, var(--vermelho));
+
+  animation: bordaBase 2s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes bordaBase {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* ---- esquerda: corre para cima ---- */
+
+.borda-esquerda {
+  width: 0.5rem;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(to top, transparent, var(--vermelho));
+
+  animation: bordaEsquerda 2s linear infinite;
+  animation-delay: 3s;
+}
+
+@keyframes bordaEsquerda {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+/* ========================================
+   MOBILE — AJUSTES FINAIS
+======================================== */
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: none;
+    padding: 2rem 1.5rem;
+  }
+
+  .game-card {
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
+  }
+
+  .loja-topo {
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .loja-topo > p {
+    max-width: none;
+  }
+
+  .socio-form {
+    padding: 1.5rem;
+  }
+
+  .carteirinha {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  /* borda animada mais fina para não comer o conteúdo */
+  .borda-topo,
+  .borda-base {
+    height: 0.5rem;
+  }
+
+  .borda-direita,
+  .borda-esquerda {
+    width: 0.5rem;
+  }
+
+  .hero-content {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .BotaoPrincipal {
+    width: 100%;
+  }
+
+  .stat {
+    width: 100%;
+
+    padding: 0;
+
+    border-left: none;
+    border-top: 0.0625rem solid rgba(255, 255, 255, 0.45);
+    padding-top: 1.25rem;
+  }
+
+  .stat strong {
+    font-size: 3rem;
+  }
+
+  /* o min-width de 18rem estourava a tela em aparelhos estreitos */
+  .stats-intro {
+    min-width: 0;
+  }
+
+  .elenco,
+  .socio,
+  .loja,
+  footer {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .elenco-video {
+    height: 14rem;
+  }
+
+  .loja-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .produto-img {
+    height: 14rem;
+  }
+
+  .carteirinha-assinatura {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .carteirinha-mrz {
+    font-size: 0.65rem;
+    letter-spacing: 0.08rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .menu ul a {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.78rem;
+  }
+
+  .game-card {
+    padding: 1.25rem;
+  }
+
+  .day {
+    font-size: 3.5rem;
+  }
+
+  .team strong {
+    font-size: 1.6rem;
+  }
+
+  .carteirinha-marca strong {
+    font-size: 1.1rem;
+  }
+
+  .carteirinha-dados dd {
+    font-size: 1.15rem;
+  }
+}

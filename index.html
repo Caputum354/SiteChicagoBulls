@@ -1,0 +1,1163 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Caputum" />
+    <meta
+      name="keywords"
+      content="Chicago Bulls, Bulls, Basquete, basketball, time, Senai"
+    />
+    <meta
+      name="description"
+      content="Site criado como atividade no Senai Frederico Jacob."
+    />
+    <link
+      rel="shortcut icon"
+      href="img/chicago-bulls-logo.ico"
+      type="image/x-icon"
+    />
+    <title>Crowd Chicago Bulls</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="impressao.css" media="print" />
+  </head>
+
+  <body id="topo">
+    <!-- ========================================
+         ÍCONES (sprite SVG usado na loja e no rodapé)
+    ========================================= -->
+    <svg class="sprite" aria-hidden="true" focusable="false">
+      <symbol id="ic-instagram" viewBox="0 0 24 24">
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          fill="none"
+          stroke-width="2"
+        />
+        <circle cx="12" cy="12" r="4" fill="none" stroke-width="2" />
+        <circle cx="17.2" cy="6.8" r="1.3" />
+      </symbol>
+
+      <symbol id="ic-youtube" viewBox="0 0 24 24">
+        <rect x="2" y="5" width="20" height="14" rx="4" />
+        <path d="M10 9l6 3-6 3z" fill="#080808" />
+      </symbol>
+
+      <symbol id="ic-x" viewBox="0 0 24 24">
+        <path
+          d="M3 3h4.6l4.7 6.3L17.7 3H21l-7 8.2L21.4 21h-4.6l-5-6.7L5.9 21H2.6l7.3-8.6z"
+        />
+      </symbol>
+    </svg>
+
+    <header>
+      <nav class="menu">
+        <a class="marca" href="#topo">
+          <figure>
+            <img
+              src="img/chicago-bulls-logo.png"
+              alt="Logo do time Chicago Bulls"
+            />
+          </figure>
+
+          <h1>
+            Chicago <br />
+            <span id="destaque">Bulls</span>
+          </h1>
+        </a>
+
+        <ul>
+          <li><a href="#elenco">Elenco</a></li>
+          <li><a href="#proximo-jogo">Próximos jogos</a></li>
+          <li><a href="#numeros">Títulos</a></li>
+          <li><a href="#socio">Seja sócio</a></li>
+          <li><a href="#loja">Loja</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ========================================
+           HERO
+      ========================================= -->
+      <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="img/BandeiraAnimacao.mp4" type="video/mp4" />
+        </video>
+
+        <div class="hero-content">
+          <!-- barras da borda animada -->
+          <span class="borda borda-topo" aria-hidden="true"></span>
+          <span class="borda borda-direita" aria-hidden="true"></span>
+          <span class="borda borda-base" aria-hidden="true"></span>
+          <span class="borda borda-esquerda" aria-hidden="true"></span>
+
+          <h2>
+            A Cidade <br />
+            <b id="destaque2">ainda joga.</b>
+          </h2>
+
+          <p id="texto">
+            Um arquivo vivo da camisa vermelha. O jogo muda, a memória fica.
+            <br />
+            Entre na quadra pela história, pela agenda e por tudo que acontece
+            ao redor.
+          </p>
+
+          <a class="BotaoPrincipal" href="#socio">Seja Sócio</a>
+        </div>
+
+        <aside class="game-card" id="proximo-jogo">
+          <div class="game-header">
+            <span class="status-dot"></span>
+            <span>PRÓXIMO JOGO</span>
+          </div>
+
+          <div class="game-date">
+            <span class="day">7</span>
+
+            <div class="month-year">
+              <strong>OUT</strong>
+              <span>2026</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="teams">
+            <div class="team">
+              <strong>CHI</strong>
+              <span>United Center</span>
+            </div>
+
+            <div class="versus">
+              <p>X</p>
+            </div>
+
+            <div class="team opponent">
+              <strong>PHO</strong>
+              <span>21:00 CT</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ========================================
+           ESTATÍSTICAS
+      ========================================= -->
+      <section class="bulls-stats" id="numeros">
+        <div class="stats-intro">
+          <span class="stats-label">O QUE FICA</span>
+
+          <h2>
+            ALGUNS NÚMEROS NÃO<br />
+            PRECISAM DE LEGENDA.
+          </h2>
+        </div>
+
+        <div class="stat">
+          <strong>06</strong>
+
+          <div>
+            <span>TÍTULOS</span>
+            <span>DA NBA</span>
+          </div>
+        </div>
+
+        <div class="stat">
+          <strong>14</strong>
+
+          <div>
+            <span>CAMISAS</span>
+            <span>IMORTAIS</span>
+          </div>
+        </div>
+
+        <div class="stat">
+          <strong>1966</strong>
+
+          <div>
+            <span>O ANO EM QUE</span>
+            <span>TUDO COMEÇOU</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+           ELENCO
+      ========================================= -->
+      <section class="elenco" id="elenco">
+        <div class="elenco-info">
+          <span class="elenco-label">O QUINTETO</span>
+
+          <h2>
+            QUEM ENTRA<br />
+            EM QUADRA?
+          </h2>
+
+          <p>
+            Uma equipe não é feita apenas de grandes nomes. É feita de posições,
+            estratégia e jogadores que sabem exatamente onde estar. Cada atleta
+            possui uma responsabilidade dentro da quadra, e o equilíbrio entre
+            essas funções é fundamental para que o time consiga atacar, defender
+            e controlar o ritmo da partida.
+          </p>
+
+          <p>
+            No basquete, cada posição possui uma função essencial. O armador
+            organiza as jogadas e controla o ataque, os alas ajudam na criação
+            das jogadas e na defesa, enquanto o pivô atua próximo à cesta,
+            disputando rebotes e protegendo o garrafão.
+          </p>
+
+          <p>
+            Mais do que cinco jogadores reunidos em uma quadra, um quinteto
+            representa uma combinação de habilidades, experiência e trabalho em
+            equipe. É essa união que transforma jogadores individuais em uma
+            verdadeira equipe.
+          </p>
+
+          <p>
+            Entre os capítulos mais marcantes estão os anos de Michael Jordan,
+            Scottie Pippen e Dennis Rodman. Durante a década de 1990, o Bulls
+            conquistou seis títulos da NBA e se tornou uma das equipes mais
+            conhecidas do esporte em todo o mundo.
+          </p>
+
+          <div class="elenco-video">
+            <video controls loop playsinline>
+              <source src="img/videoplaybackBulls.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="curiosidade">
+            <span>CURIOSIDADE</span>
+
+            <p>
+              O Chicago Bulls foi fundado em 1966 e se tornou uma das franquias
+              mais reconhecidas da história da NBA.
+            </p>
+          </div>
+        </div>
+
+        <div class="quadra">
+          <img
+            class="quadra-img"
+            src="img/QuadraBulls.webp"
+            alt="Quadra de basquete do Chicago Bulls"
+          />
+
+          <div class="jogador jogador-pg">
+            <div class="jogador-card">
+              <span class="posicao">PG</span>
+              <strong>Ayo</strong>
+            </div>
+
+            <img src="img/Ayo-removebg-preview.png" alt="Ayo" />
+          </div>
+
+          <div class="jogador jogador-sg">
+            <div class="jogador-card">
+              <span class="posicao">SG</span>
+              <strong>Coby</strong>
+            </div>
+
+            <img src="img/CobyBranco-removebg-preview.png" alt="Coby" />
+          </div>
+
+          <div class="jogador jogador-sf">
+            <div class="jogador-card">
+              <span class="posicao">SF</span>
+              <strong>Josh</strong>
+            </div>
+
+            <img src="img/Josh-removebg-preview.png" alt="Josh" />
+          </div>
+
+          <div class="jogador jogador-pf">
+            <div class="jogador-card">
+              <span class="posicao">PF</span>
+              <strong>Zach</strong>
+            </div>
+
+            <img src="img/zach-removebg-preview.png" alt="Zach" />
+          </div>
+
+          <div class="jogador jogador-c">
+            <div class="jogador-card">
+              <span class="posicao">C</span>
+              <strong>Vucevic</strong>
+            </div>
+
+            <img src="img/Vucevic-removebg-preview.png" alt="Vucevic" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+           LENDÁRIOS
+      ========================================= -->
+      <section class="lendarios" id="lendarios">
+        <div class="lendarios-topo">
+          <span class="lendarios-label">GALERIA</span>
+
+          <h2>QUEM JÁ VESTIU A CAMISA.</h2>
+
+          <p>
+            De 1966 até hoje, os nomes que escreveram a história da franquia. A
+            galeria corre sozinha — passe o mouse para pausar.
+          </p>
+        </div>
+
+        <div class="carrossel">
+          <div class="carrossel-trilho">
+            <figure class="lendario">
+              <img
+                src="img/jogadores/michael-jordan.jpg"
+                alt="Michael Jordan, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-armador</span>
+                <strong>Michael Jordan</strong>
+                <span class="lendario-anos">1984–1993 · 1995–1998</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/scottie-pippen.jpg"
+                alt="Scottie Pippen, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Scottie Pippen</strong>
+                <span class="lendario-anos">1987–1998 · 2003–2004</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/horace-grant.jpg"
+                alt="Horace Grant, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-pivô</span>
+                <strong>Horace Grant</strong>
+                <span class="lendario-anos">1987–1994</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/john-paxson.jpg"
+                alt="John Paxson, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>John Paxson</strong>
+                <span class="lendario-anos">1985–1994</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/toni-kukoc.webp"
+                alt="Toni Kukoč, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Toni Kukoč</strong>
+                <span class="lendario-anos">1993–2000</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/bob-love.webp"
+                alt="Bob Love, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Bob Love</strong>
+                <span class="lendario-anos">1968–1976</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/jerry-sloan.jpg"
+                alt="Jerry Sloan, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-armador</span>
+                <strong>Jerry Sloan</strong>
+                <span class="lendario-anos">1966–1976</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/chet-walker.webp"
+                alt="Chet Walker, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Chet Walker</strong>
+                <span class="lendario-anos">1969–1975</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/norm-van-lier.jpg"
+                alt="Norm Van Lier, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>Norm Van Lier</strong>
+                <span class="lendario-anos">1971–1978</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/artis-gilmore.jpeg"
+                alt="Artis Gilmore, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Pivô</span>
+                <strong>Artis Gilmore</strong>
+                <span class="lendario-anos">1976–1982</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/derrick-rose.jpg"
+                alt="Derrick Rose, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>Derrick Rose</strong>
+                <span class="lendario-anos">2008–2016</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/joakim-noah.webp"
+                alt="Joakim Noah, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Pivô</span>
+                <strong>Joakim Noah</strong>
+                <span class="lendario-anos">2007–2016</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/luol-deng.jpg"
+                alt="Luol Deng, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Luol Deng</strong>
+                <span class="lendario-anos">2004–2014</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/kirk-hinrich.jpg"
+                alt="Kirk Hinrich, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>Kirk Hinrich</strong>
+                <span class="lendario-anos">2003–2010 · 2012–2016</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/ben-gordon.webp"
+                alt="Ben Gordon, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-armador</span>
+                <strong>Ben Gordon</strong>
+                <span class="lendario-anos">2004–2009</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/jimmy-butler.avif"
+                alt="Jimmy Butler, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Jimmy Butler</strong>
+                <span class="lendario-anos">2011–2017</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/demar-derozan.jpeg"
+                alt="DeMar DeRozan, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>DeMar DeRozan</strong>
+                <span class="lendario-anos">2021–2024</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/zach-lavine.avif"
+                alt="Zach LaVine, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-armador</span>
+                <strong>Zach LaVine</strong>
+                <span class="lendario-anos">2017–2025</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/nikola-vucevic.jpg"
+                alt="Nikola Vučević, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Pivô</span>
+                <strong>Nikola Vučević</strong>
+                <span class="lendario-anos">Desde 2021</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario">
+              <img
+                src="img/jogadores/coby-white.webp"
+                alt="Coby White, ex-jogador do Chicago Bulls"
+                loading="lazy"
+              />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>Coby White</strong>
+                <span class="lendario-anos">Desde 2019</span>
+              </figcaption>
+            </figure>
+
+            <!-- cópia usada para o loop ficar contínuo -->
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/michael-jordan.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-armador</span>
+                <strong>Michael Jordan</strong>
+                <span class="lendario-anos">1984–1993 · 1995–1998</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/scottie-pippen.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Scottie Pippen</strong>
+                <span class="lendario-anos">1987–1998 · 2003–2004</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/horace-grant.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-pivô</span>
+                <strong>Horace Grant</strong>
+                <span class="lendario-anos">1987–1994</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/john-paxson.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>John Paxson</strong>
+                <span class="lendario-anos">1985–1994</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/toni-kukoc.webp" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Toni Kukoč</strong>
+                <span class="lendario-anos">1993–2000</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/bob-love.webp" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Bob Love</strong>
+                <span class="lendario-anos">1968–1976</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/jerry-sloan.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-armador</span>
+                <strong>Jerry Sloan</strong>
+                <span class="lendario-anos">1966–1976</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/chet-walker.webp" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Chet Walker</strong>
+                <span class="lendario-anos">1969–1975</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/norm-van-lier.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>Norm Van Lier</strong>
+                <span class="lendario-anos">1971–1978</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/artis-gilmore.jpeg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Pivô</span>
+                <strong>Artis Gilmore</strong>
+                <span class="lendario-anos">1976–1982</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/derrick-rose.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>Derrick Rose</strong>
+                <span class="lendario-anos">2008–2016</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/joakim-noah.webp" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Pivô</span>
+                <strong>Joakim Noah</strong>
+                <span class="lendario-anos">2007–2016</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/luol-deng.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Luol Deng</strong>
+                <span class="lendario-anos">2004–2014</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/kirk-hinrich.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>Kirk Hinrich</strong>
+                <span class="lendario-anos">2003–2010 · 2012–2016</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/ben-gordon.webp" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-armador</span>
+                <strong>Ben Gordon</strong>
+                <span class="lendario-anos">2004–2009</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/jimmy-butler.avif" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>Jimmy Butler</strong>
+                <span class="lendario-anos">2011–2017</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/demar-derozan.jpeg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala</span>
+                <strong>DeMar DeRozan</strong>
+                <span class="lendario-anos">2021–2024</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/zach-lavine.avif" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Ala-armador</span>
+                <strong>Zach LaVine</strong>
+                <span class="lendario-anos">2017–2025</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/nikola-vucevic.jpg" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Pivô</span>
+                <strong>Nikola Vučević</strong>
+                <span class="lendario-anos">Desde 2021</span>
+              </figcaption>
+            </figure>
+
+            <figure class="lendario" aria-hidden="true">
+              <img src="img/jogadores/coby-white.webp" loading="lazy" />
+
+              <figcaption>
+                <span class="lendario-pos">Armador</span>
+                <strong>Coby White</strong>
+                <span class="lendario-anos">Desde 2019</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================
+           SÓCIO TORCEDOR
+      ========================================= -->
+      <section class="socio" id="socio">
+        <div class="socio-form-area">
+          <span class="socio-label">SÓCIO TORCEDOR</span>
+
+          <h2>
+            SUA CADEIRA<br />
+            NO UNITED CENTER.
+          </h2>
+
+          <p class="socio-texto">
+            Preencha os dados e veja sua carteirinha ficar pronta ao lado. Este
+            formulário é uma demonstração visual: nada é enviado nem salvo.
+          </p>
+
+          <ul class="socio-beneficios">
+            <li>Prioridade na fila de ingressos</li>
+            <li>20% de desconto na loja oficial</li>
+            <li>Acesso ao treino aberto da pré-temporada</li>
+          </ul>
+
+          <form class="socio-form" id="formSocio" novalidate>
+            <div class="campo full">
+              <label for="nome">Nome completo</label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Michael Jordan"
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="voce@email.com"
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="nascimento">Data de nascimento</label>
+              <input type="date" id="nascimento" name="nascimento" />
+            </div>
+
+            <div class="campo">
+              <label for="cidade">Cidade</label>
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
+                placeholder="Rio de Janeiro"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="plano">Plano</label>
+              <select id="plano" name="plano">
+                <option value="RED">Red — R$ 29/mês</option>
+                <option value="BLACK">Black — R$ 59/mês</option>
+                <option value="LEGACY">Legacy — R$ 129/mês</option>
+              </select>
+            </div>
+
+            <div class="campo-check full">
+              <input type="checkbox" id="termos" name="termos" />
+              <label for="termos">
+                Aceito receber novidades sobre jogos e promoções.
+              </label>
+            </div>
+
+            <button class="btn-form full" type="submit">
+              Gerar minha carteirinha
+            </button>
+
+            <p class="form-aviso full" id="avisoForm" role="status"></p>
+          </form>
+        </div>
+
+        <!-- Carteirinha (documento fake) -->
+        <div class="carteirinha-area">
+          <div class="carteirinha">
+            <div class="carteirinha-top">
+              <div class="carteirinha-marca">
+                <img
+                  src="img/chicago-bulls-logo.png"
+                  alt="Logo do Chicago Bulls"
+                />
+                <div>
+                  <strong>CHICAGO BULLS</strong>
+                  <span>CARTEIRA DE SÓCIO TORCEDOR</span>
+                </div>
+              </div>
+
+              <span class="carteirinha-plano" id="cardPlano">RED</span>
+            </div>
+
+            <div class="carteirinha-corpo">
+              <img
+                class="carteirinha-foto"
+                src="img/Torcedor.jpg"
+                alt="Foto do sócio torcedor"
+              />
+
+              <dl class="carteirinha-dados">
+                <div>
+                  <dt>Nome</dt>
+                  <dd id="cardNome">NOME DO SÓCIO</dd>
+                </div>
+
+                <div>
+                  <dt>Matrícula</dt>
+                  <dd id="cardMatricula">CHI-000-000</dd>
+                </div>
+
+                <div class="linha-dupla">
+                  <div>
+                    <dt>Nascimento</dt>
+                    <dd id="cardNascimento">--/--/----</dd>
+                  </div>
+
+                  <div>
+                    <dt>Torcida desde</dt>
+                    <dd id="cardDesde">2026</dd>
+                  </div>
+                </div>
+
+                <div class="linha-dupla">
+                  <div>
+                    <dt>Cidade</dt>
+                    <dd id="cardCidade">CHICAGO</dd>
+                  </div>
+
+                  <div>
+                    <dt>Validade</dt>
+                    <dd id="cardValidade">12/2027</dd>
+                  </div>
+                </div>
+              </dl>
+            </div>
+
+            <div class="carteirinha-assinatura">
+              <span>Assinatura do sócio</span>
+              <div class="barras" aria-hidden="true"></div>
+            </div>
+
+            <p class="carteirinha-mrz" id="cardMrz">
+              BULLS&lt;&lt;SOCIO&lt;&lt;CHI0000009&lt;&lt;RED&lt;&lt;1966
+            </p>
+          </div>
+
+          <p class="carteirinha-nota">
+            Documento ilustrativo, sem validade legal.
+          </p>
+        </div>
+      </section>
+
+      <!-- ========================================
+           LOJA
+      ========================================= -->
+      <section class="loja" id="loja">
+        <div class="loja-topo">
+          <div>
+            <span class="loja-label">LOJA OFICIAL</span>
+            <h2>VISTA A CAMISA.</h2>
+          </div>
+
+          <p>
+            Uma vitrine de demonstração: os produtos abaixo são apenas visuais e
+            não têm carrinho de compras.
+          </p>
+        </div>
+
+        <div class="loja-grid">
+          <article class="produto">
+            <div class="produto-img">
+              <span class="tag">CLÁSSICA</span>
+              <img
+                class="produto-foto"
+                src="img/Camiseta-removebg-preview.png"
+                alt="Camisa vermelha do Chicago Bulls número 91"
+              />
+            </div>
+
+            <div class="produto-info">
+              <span class="produto-cat">CAMISA</span>
+              <h3>Home Vermelha — Nº 91</h3>
+              <p>
+                Réplica em malha mesh, com degradê e número aplicado nas costas.
+              </p>
+              <span class="preco">R$ 349,90</span>
+              <button class="btn-produto" type="button">Ver produto</button>
+            </div>
+          </article>
+
+          <article class="produto">
+            <div class="produto-img">
+              <span class="tag">MAIS VENDIDA</span>
+              <img
+                class="produto-foto"
+                src="img/AwayBranca.png"
+                alt="Camisa branca do Chicago Bulls número 23"
+              />
+            </div>
+
+            <div class="produto-info">
+              <span class="produto-cat">CAMISA</span>
+              <h3>Away Branca — Nº 23</h3>
+              <p>Corte solto, malha respirável e escudo bordado no peito.</p>
+              <span class="preco">R$ 329,90</span>
+              <button class="btn-produto" type="button">Ver produto</button>
+            </div>
+          </article>
+
+          <article class="produto">
+            <div class="produto-img">
+              <span class="tag">EDIÇÃO LIMITADA</span>
+              <img
+                class="produto-foto"
+                src="img/CityEditionWindyCity.png"
+                alt="Jaqueta City Edition do Chicago Bulls"
+              />
+            </div>
+
+            <div class="produto-info">
+              <span class="produto-cat">JAQUETA</span>
+              <h3>City Edition — Windy City</h3>
+              <p>
+                Gola e punhos canelados, com identidade da linha City Edition.
+              </p>
+              <span class="preco">R$ 399,90</span>
+              <button class="btn-produto" type="button">Ver produto</button>
+            </div>
+          </article>
+
+          <article class="produto">
+            <div class="produto-img">
+              <img
+                class="produto-foto"
+                src="img/BoneSnapbackPreto.png"
+                alt="Boné snapback preto do Chicago Bulls"
+              />
+            </div>
+
+            <div class="produto-info">
+              <span class="produto-cat">ACESSÓRIO</span>
+              <h3>Boné Snapback Preto</h3>
+              <p>Aba reta, escudo bordado em alto relevo e ajuste traseiro.</p>
+              <span class="preco">R$ 179,90</span>
+              <button class="btn-produto" type="button">Ver produto</button>
+            </div>
+          </article>
+
+          <article class="produto">
+            <div class="produto-img">
+              <img
+                class="produto-foto"
+                src="img/BolaOficialTamanho7.png"
+                alt="Bola oficial de basquete tamanho 7"
+              />
+            </div>
+
+            <div class="produto-info">
+              <span class="produto-cat">ACESSÓRIO</span>
+              <h3>Bola Oficial Tamanho 7</h3>
+              <p>Couro sintético com aderência para quadra coberta.</p>
+              <span class="preco">R$ 259,90</span>
+              <button class="btn-produto" type="button">Ver produto</button>
+            </div>
+          </article>
+
+          <article class="produto">
+            <div class="produto-img">
+              <span class="tag">NOVO</span>
+              <img
+                class="produto-foto"
+                src="img/Caneca1966.png"
+                alt="Caneca branca com o escudo do Chicago Bulls"
+              />
+            </div>
+
+            <div class="produto-info">
+              <span class="produto-cat">ACESSÓRIO</span>
+              <h3>Caneca 1966</h3>
+              <p>Cerâmica esmaltada, 400 ml, com o ano da fundação impresso.</p>
+              <span class="preco">R$ 89,90</span>
+              <button class="btn-produto" type="button">Ver produto</button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========================================
+         RODAPÉ
+    ========================================= -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-marca">
+          <img src="img/chicago-bulls-logo.png" alt="Logo do Chicago Bulls" />
+
+          <p>
+            Crowd Chicago Bulls é um projeto acadêmico feito por torcedores. Sem
+            vínculo oficial com a NBA ou com a franquia.
+          </p>
+
+          <div class="footer-redes">
+            <a href="#topo" aria-label="Instagram">
+              <svg><use href="#ic-instagram" /></svg>
+            </a>
+            <a href="#topo" aria-label="YouTube">
+              <svg><use href="#ic-youtube" /></svg>
+            </a>
+            <a href="#topo" aria-label="X">
+              <svg><use href="#ic-x" /></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col">
+          <h3>O time</h3>
+          <ul>
+            <li><a href="#elenco">Elenco</a></li>
+            <li><a href="#numeros">Títulos</a></li>
+            <li><a href="#proximo-jogo">Próximos jogos</a></li>
+            <li><a href="#lendarios">Lendários</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col">
+          <h3>Torcida</h3>
+          <ul>
+            <li><a href="#socio">Seja sócio</a></li>
+            <li><a href="#loja">Loja oficial</a></li>
+            <li><a href="#topo">Início</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col footer-contato">
+          <h3>Arena</h3>
+          <p>
+            United Center<br />
+            1901 W Madison St — Chicago, IL
+          </p>
+          <p>contato@crowdbulls.com.br</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Crowd Chicago Bulls</span>
+        <span>Atividade desenvolvida no SENAI Frederico Jacob</span>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
