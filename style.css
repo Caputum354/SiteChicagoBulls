@@ -684,14 +684,6 @@ header {
   opacity: 0.85;
 }
 
-.elenco-video iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  border: none;
-  display: block;
-}
-
 /* ========================================
    CURIOSIDADE
 ======================================== */
