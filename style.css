@@ -656,7 +656,7 @@ header {
    VÍDEO
 ======================================== */
 
-. {
+.elenco-video {
   width: 100%;
   height: 24rem;
 
@@ -665,7 +665,6 @@ header {
   overflow: hidden;
 
   border-left: 0.35rem solid var(--vermelho);
-
   border-radius: 8px;
 
   background-color: var(--preto-2);
@@ -673,15 +672,13 @@ header {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-.elenco-video video {
+.elenco-video iframe {
   width: 100%;
   height: 100%;
 
   display: block;
 
-  object-fit: cover;
-
-  opacity: 0.85;
+  border: none;
 }
 
 /* ========================================
