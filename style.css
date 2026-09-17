@@ -673,8 +673,11 @@ header {
 }
 
 .elenco-video iframe {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 24rem !important;
+
+  min-width: 100%;
+  min-height: 24rem;
 
   display: block;
 
