@@ -1,51 +1,71 @@
-# Bulls Court
+# Crowd Chicago Bulls
 
-**Bulls Court** é uma experiência editorial responsiva sobre o Chicago Bulls, criada para apresentar a identidade visual do time em uma interface com ritmo de revista esportiva. O projeto foi implementado no front-end com **HTML, CSS e JavaScript puro**, sem frameworks de interface, banco de dados ou API própria.
+Site institucional e de merchandising inspirado no Chicago Bulls, desenvolvido como projeto de estudo em web design. A página simula uma experiência moderna de clube e torcedor, com foco em visual editorial, identidade da franquia e elementos de interatividade.
 
-> A direção visual escolhida foi **Courtside Editorial**: uma composição neo-editorial inspirada em pôsteres de arena, Swiss Style e cultura impressa de zines.
+## 🏀 Visão geral
 
-## Estrutura do projeto
+O projeto apresenta:
 
-| Arquivo | Responsabilidade |
-| --- | --- |
-| `client/index.html` | Documento HTML, metadados, título e carregamento das fontes. |
-| `client/src/main.js` | Estrutura de conteúdo, renderização, dados estáticos e interações. |
-| `client/src/styles.css` | Tokens visuais, layout responsivo, animações e estados de interface. |
-| `ideas.md` | Brainstorm de direção visual e decisões de marca. |
+- hero com vídeo e conteúdo de destaque
+- seção de estatísticas e títulos
+- elenco com apresentação visual dos jogadores
+- galeria de ícones e lendas do Bulls
+- formulário de sócio torcedor
+- vitrine de loja com produtos ilustrativos
+- layout responsivo para desktop e mobile
 
-## Tipografia
+## 🧩 Tecnologias
 
-| Fonte | Uso | Características |
-| --- | --- | --- |
-| **Bebas Neue** | Manchetes, placares, anos, números e wordmark editorial. | Condensada, forte e com leitura imediata em tamanhos grandes. |
-| **Manrope** | Corpo de texto, navegação, metadados, botões e formulários. | Geométrica, limpa e confortável para leitura em telas. |
+- HTML5
+- CSS3
+- JavaScript
+- Assets locais em pasta `img/`
 
+## 📁 Estrutura do repositório
 
+```text
+SiteChicagoBulls/
+├── img/
+├── index.html
+├── style.css
+├── script.js
+├── readme.md
+└── .gitignore
+```
 
-## Cores utilizadas
+> O projeto é estático e não depende de frameworks ou bibliotecas externas.
 
-| Nome | Hexadecimal | Função na interface |
-| --- | --- | --- |
-|   **Bulls Red**    | ` #CE1141 ` | Cor de ação, CTAs, etiquetas, destaques, estados ativos e áreas de energia. |
-| **Bulls Red Dark** | ` #9F0D32 ` | Estado hover e variação de profundidade do vermelho principal. |
-|     **Black**      | ` #080808 ` | Cabeçalho, rodapé, seção editorial, modal e áreas de contraste máximo. |
-|      **Ink**       | ` #151515 ` | Texto principal sobre superfícies claras. |
-|     **Paper**      | ` #F2F0EB ` | Fundo off-white das áreas de agenda, história e ícones. |
-| **White**          | ` #FFFFFF ` | Texto sobre fundos escuros, botões claros e respiro visual. |
-| **Steel**          | ` #A3A5A4 ` | Referência metálica para textos de apoio e sensação de placar. |
-| **Muted**          | ` #777773 ` | Metadados e texto secundário em superfícies de papel. |
+## 🚀 Como executar localmente
 
-## Assets
+### Opção 1: abrir diretamente no navegador
 
-As imagens fornecidas (`bandeiraBulls.jpg`, `chicago-bulls-logo.png` e `TorcidaBulls.jpg`) aparecem no hero, no cabeçalho, nos cartões de agenda, no arquivo e na seção de torcida. Também foram preparados assets editoriais complementares para imagens de arena, detalhe de quadra, cidade à noite e um símbolo gráfico de apoio.
+- baixe ou clone o repositório
+- abra o arquivo `index.html` em qualquer navegador moderno
 
-Os arquivos de imagem são referenciados por URLs de storage do projeto, em vez de serem colocados dentro de `client/public/`. Isso mantém o bundle do front-end leve e segue a organização de mídia do ambiente.
+### Opção 2: servir localmente via Python
 
-## Interações incluídas
+```bash
+python -m http.server 8000
+```
 
-O site possui menu mobile com abertura e fechamento, navegação por âncoras, busca visual com filtragem dos cartões de notícias, filtros de ícones, modal para leitura de notas, newsletter com feedback de envio, ticker animado, entrada progressiva das seções, botão para retornar ao topo e suporte a `prefers-reduced-motion`.
+Depois acesse:
 
-## Execução
+```text
+http://localhost:8000
+```
 
-## Site desenvolvido como atividade prática no curso de web design python
-No ambiente do projeto, a aplicação é servida pelo Vite. Para uma execução local equivalente, instale as dependências do template e use o script de desenvolvimento configurado no `package.json`. A entrega visual e funcional está concentrada em `client/index.html`, `client/src/main.js` e `client/src/styles.css`.
+## 🎨 Conteúdo destacado
+
+A interface foi pensada como uma landing page esportiva com visual editorial, destacando:
+
+- identidade visual vermelha e preta dos Bulls
+- elementos de marca e narrativa histórica
+- seção de loja e associação de torcedores
+- carrossel de jogadores lendários
+- foco em responsividade e apresentação visual
+
+## 📝 Observações
+
+Este projeto foi desenvolvido como atividade prática de web design e tem caráter de demonstração visual, com conteúdo estático e interações front-end em JavaScript.
+
+Se quiser, também posso criar uma versão do README em inglês, adicionar badges e uma seção de screenshots, ou ajustar o texto para um perfil mais profissional/portfolio.
