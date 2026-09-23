@@ -67,5 +67,3 @@ A interface foi pensada como uma landing page esportiva com visual editorial, de
 ## 📝 Observações
 
 Este projeto foi desenvolvido como atividade prática de web design e tem caráter de demonstração visual, com conteúdo estático e interações front-end em JavaScript.
-
-Se quiser, também posso criar uma versão do README em inglês, adicionar badges e uma seção de screenshots, ou ajustar o texto para um perfil mais profissional/portfolio.
